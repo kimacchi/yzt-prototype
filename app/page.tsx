@@ -6,6 +6,7 @@ import { useEffect,useState } from 'react'
 import main_page_texts from "../src/main_page_texts.json"
 import quotes from "../src/quotes.json"
 import AnimatedText from '@/components/AnimatedText'
+import Links from '@/components/Links'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -31,19 +32,17 @@ export default function Home() {
 
   return (
     <>
-      <div>
-
-        <div>
-          <p className='text-6xl tracking-wide'>
+      <div className="flex flex-col md:flex-row items-center md:px-96 w-full justify-start md:justify-between">
+        <div className='md:w-2/6 w-2/3 flex flex-col items-center justify-center md:mb-0 mb-8'>
+          <h1 className='md:text-6xl text-4xl tracking-wide mb-6 text-center md:text-left'>
             {texts.Title}
-          </p>
+          </h1>
           <div>
-            <AnimatedText quote={localQuotes[0].text} />
+            <AnimatedText quotes={localQuotes} />
           </div>
         </div>
-
         <div>
-
+          <Links />
         </div>
       </div>
     </>

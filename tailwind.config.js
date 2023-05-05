@@ -25,7 +25,9 @@ module.exports = {
         redCode: "#FF4D77",
         redCircle: "#FF4949",
         yellowCircle: "#FFCF26",
-        greenCircle: "#31FF52"
+        greenCircle: "#31FF52",
+        borderColor: "#FF6700",
+        grayCode: "#A4A4A4"
       }
     },
   },

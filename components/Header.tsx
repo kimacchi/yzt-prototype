@@ -7,7 +7,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const Header = () => {
-    const [language, setLanguage] = useState(localStorage.getItem("language"));
+    const [language, setLanguage] = useState(localStorage.getItem("language") && "tr");
     useEffect(() => {
         if(!localStorage.getItem("language")){
             localStorage.setItem("language", "tr")
