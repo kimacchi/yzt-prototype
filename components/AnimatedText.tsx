@@ -1,36 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Typewriter } from 'react-simple-typewriter'
 
-const container = {
-  // hidden: { opacity: 1 },
-  visible: (i = 1) => ({
-    // opacity: 1,
-    transition: { staggerChildren: 0.004, delayChildren: 0 * i },
-  }),
-};
-
-const child = {
-  visible: {
-    // opacity: 1,
-    visibility: "visible",
-    transition: {
-      type: "spring",
-      damping: 12,
-      stiffness: 100,
-      visibility: "visible",
-    },
-  },
-  hidden: {
-    // opacity: 0,
-    visibility: "hidden",
-    transition: {
-      type: "spring",
-      damping: 12,
-      stiffness: 100,
-      visibility: "hidden",
-    },
-  },
-};
 
 const AnimatedText = ({
   quotes,
@@ -39,6 +10,7 @@ const AnimatedText = ({
 }) => {
   const [letters, setLetters] = useState<string[]>([""]);
   const [quote, setQuote] = useState<{ text: string; from: string }>();
+
   useEffect(() => {
     if (!quote?.text) {
       let index: number = Math.floor(Math.random() * (quotes.length - 1));
@@ -59,7 +31,7 @@ const AnimatedText = ({
 
   return (
     <div>
-      <motion.p
+      {/* <motion.p
         // variants={container}
         // initial="hidden"
         // animate="visible"
@@ -77,7 +49,15 @@ const AnimatedText = ({
           );
         })}
       </motion.p>
-      <p className="text-xl font-extralight w-full text-right">- {quote?.from}</p>
+      <p className="text-xl font-extralight w-full text-right">- {quote?.from}</p> */}
+
+      <Typewriter 
+        words={[...quotes.map(e=>e.text +"\n\n"+e.from)]} 
+        typeSpeed={7} 
+        deleteSpeed={2}
+        delaySpeed={10000}
+        loop={false}
+      />
     </div>
   );
 };

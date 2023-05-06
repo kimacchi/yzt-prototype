@@ -17,9 +17,11 @@ export default function RootLayout({
 
   
   return (
-    <html lang="en">
-      <body className="bg-backgroundColor text-whiteish font-space">
-        <Header />
+    <html lang="en" className='h-screen'>
+      <body className="bg-backgroundColor text-whiteish font-space h-full">
+        <div className='fixed w-full'>
+          <Header />
+        </div>
         <>
           {children}
         </>
