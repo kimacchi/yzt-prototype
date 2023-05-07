@@ -1,8 +1,5 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
 import Header from '@/components/Header'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -17,9 +14,9 @@ export default function RootLayout({
 
   
   return (
-    <html lang="en" className='h-screen'>
+    <html lang="en" className='h-screen scroll-smooth'>
       <body className="bg-backgroundColor text-whiteish font-space h-full">
-        <div className='fixed w-full'>
+        <div className='fixed w-full bg-backgroundColorTransparent backdrop-blur-sm z-10'>
           <Header />
         </div>
         <>

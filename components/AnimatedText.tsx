@@ -30,33 +30,14 @@ const AnimatedText = ({
   }, [quote]);
 
   return (
-    <div>
-      {/* <motion.p
-        // variants={container}
-        // initial="hidden"
-        // animate="visible"
-        className="md:text-xl text-xs italic font-extralight"
-      >
-        {letters.map((letter, index) => {
-          return (
-            <motion.span
-              key={index}
-              // variants={child}
-              // animate={{visibility: ["hidden", "hidden"]}}
-            >
-              {letter}
-            </motion.span>
-          );
-        })}
-      </motion.p>
-      <p className="text-xl font-extralight w-full text-right">- {quote?.from}</p> */}
-
+    <div className="text-gray-400">
       <Typewriter 
         words={[...quotes.map(e=>e.text +"\n\n"+e.from)]} 
         typeSpeed={7} 
         deleteSpeed={2}
         delaySpeed={10000}
         loop={false}
+        cursor={true}
       />
     </div>
   );
